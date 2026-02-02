@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Roshini 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+  margin:0;padding:0;box-sizing:border-box;
+  font-family:'Poppins','Segoe UI',sans-serif;
+}
+
+/* 🌈 LIGHT BACKGROUND */
+body{
+  height:100vh;
+  overflow:hidden;
+  background:linear-gradient(135deg,#fff1f6,#ffe4ec,#ffeef5);
+}
+
+/* 💖 BACKGROUND FLOAT */
+.bg-float{
+  position:fixed;
+  bottom:-40px;
+  font-size:28px;
+  opacity:.18;
+  animation:floatUp linear forwards;
+  pointer-events:none;
+  z-index:0;
+}
+@keyframes floatUp{
+  from{transform:translateY(0);}
+  to{transform:translateY(-120vh);}
+}
+
+/* 📄 PAGES */
+.page{
+  position:absolute;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  opacity:0;
+  transform:translateX(120%) scale(0.9);
+  transition:1s;
+  z-index:1;
+}
+.page.active{
+  opacity:1;
+  transform:translateX(0) scale(1);
+}
+
+/* 🎁 CARD */
+.card{
+  background:rgba(255,255,255,.97);
+  padding:32px;
+  border-radius:25px;
+  max-width:450px;
+  width:92%;
+  box-shadow:0 30px 60px rgba(255,105,180,.35);
+}
+
+/* ✨ HEADING */
+h1{
+  color:#ff2f92;
+  margin-bottom:10px;
+  animation:glow 2s infinite alternate;
+}
+@keyframes glow{
+  from{text-shadow:0 0 6px #ff2f92;}
+  to{text-shadow:0 0 30px #ff2f92;}
+}
+
+/* 🔘 BUTTON */
+button{
+  margin-top:22px;
+  padding:12px 34px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(45deg,#ff2f92,#ff9acb);
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+  animation:pulse 1.6s infinite;
+}
+@keyframes pulse{50%{transform:scale(1.12);}}
+
+/* 📸 GALLERY */
+.gallery{
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+  padding:12px;
+}
+.gallery img{
+  width:260px;
+  border-radius:18px;
+  box-shadow:0 14px 30px rgba(0,0,0,.3);
+}
+
+/* 💌 WISHES */
+.wishes span{
+  display:block;
+  opacity:0;
+  transform:translateY(25px);
+  animation:fadeUp .9s forwards;
+}
+.wishes span:nth-child(1){animation-delay:.4s;}
+.wishes span:nth-child(2){animation-delay:1.2s;}
+.wishes span:nth-child(3){animation-delay:2s;}
+.wishes span:nth-child(4){animation-delay:2.8s;}
+.wishes span:nth-child(5){animation-delay:3.6s;}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+
+/* 🎂 CAKE */
+#cake{
+  font-size:72px;
+  margin-top:22px;
+  cursor:pointer;
+  animation:bounce 1.6s infinite;
+}
+@keyframes bounce{50%{transform:translateY(-14px);}}
+
+/* 💥 BRIGHT BLAST */
+.spark{
+  position:fixed;
+  width:10px;
+  height:10px;
+  background:radial-gradient(circle,#fff,#ffeb3b,#ff4081);
+  border-radius:50%;
+  animation:explode 1.4s ease-out forwards;
+  box-shadow:0 0 20px #fff,0 0 40px #ff4081;
+}
+@keyframes explode{
+  to{
+    transform:translate(var(--x),var(--y)) scale(0);
+    opacity:0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active">
+  <div class="card">
+    <h1>🎉 Happy Birthday 🎉</h1>
+    <p>One click…<br>A magical surprise awaits ✨</p>
+    <button onclick="next()">Enter 💫</button>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <div class="card">
+    <h1>MY DEAR😍🫂🤍</h1>
+    <p>
+Friendship is our foundation, love is our sky,<br>
+Together we soar, just you and I ✨💖<br>
+Through every laugh and every tear,<br>
+Your hand in mine wipes away all fear.<br>
+In you, I’ve found my heart’s forever home 🌸💞
+    </p>
+    <button onclick="next()">Memories 📸</button>
+  </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+  <div class="card">
+    <h1>📸 Our Moments</h1>
+    <p>Swipe pannunga 👉</p>
+    <div class="gallery">
+      <img src="photos/pic1.jpg">
+      <img src="photos/pic2.jpg">
+      <img src="photos/pic3.jpg">
+      <img src="photos/pic4.jpg">
+      <img src="photos/pic5.jpg">
+    </div>
+    <button onclick="next()">Surprise 💌</button>
+  </div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page">
+  <div class="card">
+    <h1>🎂 Happy Birthday 🎂</h1>
+    <div class="wishes">
+      <span>💫 Happy Birthday to my bestest friend 💫</span>
+      <span>You are my safe place & happiness 🤍</span>
+      <span>Thank you for always standing by me</span>
+      <span>Life brighter aaguthu because of you ✨</span>
+      <span>Love you always 💖</span>
+    </div>
+
+    <div id="cake">🎂✨</div>
+    <p style="margin-top:10px;font-weight:bold;">
+      (Touch the cake 💥)
+    </p>
+    
+
+    <button onclick="next()">Final 💖</button>
+  </div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page">
+  <h1>🎆 Once Again Happy Birthday Roshini 💖 🎆</h1>
+  <p style="margin-top:15px;font-size:18px;">
+    Always special 🤍<br>
+    Forever loved ✨<br>
+    This page ends… but us? Never 💫
+  </p>
+</div>
+
+<script>
+let page=0;
+const pages=document.querySelectorAll(".page");
+const cake=document.getElementById("cake");
+
+/* SLIDE */
+function next(){
+  pages[page].classList.remove("active");
+  page++;
+  pages[page].classList.add("active");
+}
+
+/* 🎂 BRIGHT BLAST */
+cake.addEventListener("click",()=>{
+  for(let i=0;i<120;i++){
+    const s=document.createElement("div");
+    s.className="spark";
+    s.style.left="50vw";
+    s.style.top="50vh";
+    s.style.setProperty("--x",(Math.random()*500-250)+"px");
+    s.style.setProperty("--y",(Math.random()*500-250)+"px");
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),1400);
+  }
+});
+
+/* 💖 BACKGROUND FLOAT */
+setInterval(()=>{
+  const b=document.createElement("div");
+  b.className="bg-float";
+  b.innerHTML=Math.random()>0.5?"ROSHINI 💖":"🤍 ROSHINI";
+  b.style.left=Math.random()*100+"vw";
+  b.style.animationDuration=(6+Math.random()*5)+"s";
+  document.body.appendChild(b);
+  setTimeout(()=>b.remove(),12000);
+},350);
+</script>
+
+</body>
+</html>
